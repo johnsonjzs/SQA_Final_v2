@@ -2,7 +2,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
- 
+
 public class Platform {
   public Student[] std;
   public School[] sch;
@@ -56,12 +56,14 @@ public class Platform {
   
   /**
    * 將School preselection輸出成school_output.txt
+ * @throws IOException 輸出錯誤
    */
-  public void outputSchoolPreselection() throws IOException{
+  public void outputSchoolPreselection() throws IOException {
     File writeName = new File("./output/school_output.txt");
     ArrayList<PreselectionInformation> preselection = new ArrayList<PreselectionInformation>();
-      
-      FileWriter fwriter = new FileWriter(writeName);
+    FileWriter fwriter = null;
+    try {
+      fwriter = new FileWriter(writeName);
       for (School schools : sch) {
         preselection = schools.getPreselection();
               
@@ -83,14 +85,24 @@ public class Platform {
         fwriter.write("----------------------------------------------------------------------\n");
       }
       fwriter.close();
+    } catch (Exception e) {
+      e.printStackTrace();
+    } finally {
+      if (fwriter != null) {
+        fwriter.close();
+      }
+    }
   }
   
   /**
    * 將Student result輸出成student_output.txt
+ * @throws IOException 輸出錯誤
    */
-  public void outputStudentRank() throws IOException{
+  public void outputStudentRank() throws IOException {
     File writeName = new File("./output/student_output.txt");
-      FileWriter fwriter = new FileWriter(writeName);
+    FileWriter fwriter = null;
+    try {
+      fwriter = new FileWriter(writeName);
       for (Student students : std) {
         fwriter.write(students.getStudentName() + "\n");
         for (int i = 0;i < students.getRank().length;i++) {
@@ -100,5 +112,12 @@ public class Platform {
         fwriter.write("----------------------------------------------------------------------\n");
       }
       fwriter.close();
+    } catch (Exception e) {
+      e.printStackTrace();
+    } finally {
+      if (fwriter != null) {
+        fwriter.close();
+      }
+    }
   }
 }
