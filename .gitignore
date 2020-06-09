@@ -4,3 +4,5 @@ build/
 bin/
 .classpath
 .project
+output/school_output.txt
+output/student_output.txt
