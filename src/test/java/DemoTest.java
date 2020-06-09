@@ -1,8 +1,11 @@
+package test;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class DemoTest { 
+import main.Demo;
+
+public class DemoTest {
 
 	@Test
 	public void test() throws Exception {

@@ -1,8 +1,9 @@
- 
+package main;
+
 public class Demo {
-  /** 
-   * main. 
-   * @param args 無  
+  /**
+   * main.
+   * @param args 無
    * @throws Exception 讀檔失敗
    */
   public static void main(String[] args) throws Exception {

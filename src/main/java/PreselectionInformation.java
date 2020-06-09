@@ -1,9 +1,10 @@
+package main;
 
 public class PreselectionInformation {
   private String studentName;
   private double scoreSum;
   private String rank;
-       
+      
   public PreselectionInformation(String studentName,double scoreSum) {
     this.studentName = studentName;
     this.scoreSum = scoreSum;

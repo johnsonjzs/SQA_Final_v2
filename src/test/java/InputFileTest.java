@@ -1,6 +1,9 @@
+package test;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+
+import main.InputFile;
 
 public class InputFileTest {
 
@@ -16,7 +19,7 @@ public class InputFileTest {
 		String path = null;
 		InputFile inputFile = new InputFile();
 		inputFile.readStudentFile(path);
-	} 
+	}
 
 	@Test()
 	public void test3() throws Exception{

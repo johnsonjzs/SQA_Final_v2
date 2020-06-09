@@ -1,6 +1,9 @@
+package test;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+
+import main.Student;
 
 public class StudentTest {
 
@@ -19,7 +22,7 @@ public class StudentTest {
 		assertArrayEquals(new String[] {"D", "E", "F"} ,s.getVoluntaryOrder());
 	}
 	
-	@Test(expected=Exception.class) 
+	@Test(expected=Exception.class)
 	public void test2() throws Exception {
 		Student s = new Student("01", -1, 20, 40, 50, 60, "A", "B", "C");
 	}
